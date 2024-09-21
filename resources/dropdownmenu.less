@@ -1,0 +1,54 @@
+.skin-freo-menu {
+	position: relative;
+	text-align: right;
+	z-index: 90;
+	margin: 0.5em;
+	display: inline-block;
+
+	button,
+	menu {
+		padding: 0 0.3em;
+		margin: 0;
+	}
+
+	button {
+		border: 1px solid #e2dcd3;
+		background: none;
+		cursor: pointer;
+		font-size: 1em;
+		line-height: 2em;
+		position: relative;
+		z-index: 110;
+	}
+
+	menu {
+		visibility: hidden;
+		width: 10em;
+		list-style-type: none;
+		border: 1px solid #e2dcd3;
+		position: absolute;
+		right: 0;
+		background-color: #eeebe8;
+		display: flex;
+		flex-direction: column;
+		top: 2em;
+		box-shadow: 2px 2px 3px #5858585b;
+	}
+
+	&[ data-skin-freo-menu-open ] button {
+		background-color: #eeebe8;
+		border-bottom-color: #eeebe8;
+	}
+
+	&[ data-skin-freo-menu-open ] menu {
+		visibility: visible;
+		z-index: 100;
+	}
+
+	a {
+		display: block;
+		margin: 0;
+		width: 100%;
+		padding: 0;
+	}
+}

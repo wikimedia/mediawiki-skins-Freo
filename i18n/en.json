@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sam Wilson"
+		]
+	},
+	"skinname-freo": "Freo",
+	"freo-desc": "A simple reader-centric skin for local history wikis.",
+	"skin-freo-menu-actions": "Actions",
+	"skin-freo-menu-user": "User",
+	"skin-freo-menu-site": "Site",
+	"skin-freo-config.json": "{\"menus\": {\"info\": {\"label\": \"One Menu\", \"items\": [{\"page\": \"Lorem\", \"label\": \"Lorem ipsum\" }, {\"page\": \"MediaWiki: Skin-freo-config.json\",\"label\": \"Edit these menus\"}]}, \"topics\": {\"label\": \"Topics\", \"items\": [{\"page\": \"A page\"}]}}}",
+	"skin-freo-footer-blurb": "This is the footer blurb, it can be edited at [[MediaWiki:skin-freo-footer-blurb]]."
+}

@@ -1,0 +1,65 @@
+<header class="skin-freo-siteheader mw-header">
+	<p class="skin-freo-sitetitle">
+		<strong>
+			<a href="{{link-mainpage}}">
+				{{msg-sitetitle}}
+			</a>
+		</strong>
+	</p>
+	<nav>
+		{{{html-freo-menus}}}
+	</nav>
+	{{#data-search-box}}
+		<form action="{{form-action}}" class="skin-freo-searchform">
+			<input type="hidden" name="title" value="{{page-title}}">
+			<label for="searchInput">{{msg-search}}</label>
+			{{{html-input}}}
+		</form>
+	{{/data-search-box}}
+
+	<div>
+		<div class="skin-freo-menu">
+			<button>{{msg-skin-freo-menu-user}}</button>
+			<menu>
+				{{{data-portlets.data-user-menu.html-items}}}
+			</menu>
+		</div>
+		{{{html-freo-menu-site}}}
+	</div>
+</header>
+
+<main>
+	<header>
+		<div class="skin-freo-title-menu">
+			<h1 class="skin-freo-title firstHeading">
+				{{#page-title-url}}<a href="{{.}}">{{/page-title-url}}{{!
+					}}{{#page-title-displaytitle}}{{{.}}}{{/page-title-displaytitle}}{{!
+					}}{{^page-title-displaytitle}}{{page-title-text}}{{/page-title-displaytitle}}{{!
+				}}{{#page-title-url}}</a>{{/page-title-url}}
+			</h1>
+
+			<div class="skin-freo-menu">
+				<button>{{msg-skin-freo-menu-actions}}</button>
+				<menu>
+					{{{html-freo-page-actions}}}
+				</menu>
+			</div>
+		</div>
+		{{{html-subtitle}}}
+	</header>
+
+	<div id="content">
+		<div id="mw-content-text">
+			{{{html-body-content}}}
+		</div>
+	</div>
+
+	{{{html-after-content}}}
+
+	<footer>
+	</footer>
+</main>
+
+<footer class="skin-freo-sitefooter">
+	<div class="skin-freo-footer-blurb">{{{html-footer-blurb}}}</div>
+</footer>

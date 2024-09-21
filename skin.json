@@ -1,0 +1,89 @@
+{
+	"name": "Freo",
+	"version": "0.1.0",
+	"author": [
+		"[https://samwilson.id.au Sam Wilson]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Skin:Freo",
+	"descriptionmsg": "freo-skin-desc",
+	"namemsg": "skinname-freo",
+	"type": "skin",
+	"requires": {
+		"MediaWiki": ">= 1.38.0"
+	},
+	"ValidSkinNames": {
+		"freo": {
+			"class": "SkinFreo",
+			"args": [
+				{
+					"name": "freo",
+					"responsive": true,
+					"toc": false,
+					"messages": [
+						"sitetitle",
+						"skin-freo-menu-actions",
+						"skin-freo-menu-user",
+						"skin-freo-menu-site"
+					],
+					"styles": [
+						"skins.freo.styles"
+					],
+					"scripts": [
+						"skins.freo"
+					]
+				}
+			]
+		}
+	},
+	"MessagesDirs": {
+		"Freo": [
+			"i18n"
+		]
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteSkinPath": "Freo"
+	},
+	"ResourceModules": {
+		"skins.freo.styles": {
+			"class": "MediaWiki\\ResourceLoader\\SkinModule",
+			"features": {
+				"normalize": true,
+				"elements": true,
+				"content-tables": true,
+				"content-links": true,
+				"content-media": true,
+				"content-links-external": false,
+				"interface-message-box": true,
+				"interface-category": true,
+				"toc": true
+			},
+			"styles": {
+				"skin.less": {
+					"media": "all"
+				},
+				"print.less": {
+					"media": "print"
+				},
+				"mobile.less": {
+					"media": "screen and (max-width: 750px)"
+				}
+			}
+		},
+		"skins.freo": {
+			"targets": [
+				"desktop",
+				"mobile"
+			],
+			"packageFiles": [
+				"skin.js",
+				"dropdownmenu.js"
+			]
+		}
+	},
+	"ResourceModuleSkinStyles": {},
+	"AutoloadClasses": {
+		"SkinFreo": "includes/SkinFreo.php"
+	},
+	"manifest_version": 2
+}
