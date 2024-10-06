@@ -26,7 +26,9 @@ header.skin-freo-siteheader {
 		color: inherit;
 	}
 
-	.skin-freo-sitetitle {
+	.mw-logo {
+		display: flex;
+		align-items: center;
 		margin: 0 2em;
 		padding: 0;
 	}
@@ -101,6 +103,8 @@ h1,
 h2,
 h3 {
 	line-height: 1.2;
+	display: flex;
+	justify-content: space-between;
 }
 
 a {
@@ -145,6 +149,25 @@ figure {
 	figcaption .meta {
 		text-align: right;
 		display: block;
+	}
+
+	.mw-file-description::after {
+		display: none;
+	}
+}
+
+.mw-editsection {
+	user-select: none;
+	font-weight: normal;
+
+	a {
+		font-size: 55%;
+		margin-left: 1em;
+	}
+
+	.mw-editsection-bracket,
+	.mw-editsection-divider {
+		display: none;
 	}
 }
 

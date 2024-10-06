@@ -1,11 +1,19 @@
 <header class="skin-freo-siteheader mw-header">
-	<p class="skin-freo-sitetitle">
-		<strong>
-			<a href="{{link-mainpage}}">
-				{{msg-sitetitle}}
-			</a>
-		</strong>
-	</p>
+
+	{{#data-logos}}
+		<a href="{{link-mainpage}}" class="mw-logo">
+			{{#icon}}
+				<img class="mw-logo-icon" src="{{.}}" alt="" aria-hidden="true">
+			{{/icon}}
+			{{#wordmark}}
+				<img class="mw-logo-wordmark" alt="{{msg-sitetitle}}" src="{{src}}" style="{{style}}">
+			{{/wordmark}}
+			{{^wordmark}}
+				<strong>{{msg-sitetitle}}</strong>
+			{{/wordmark}}
+		</a>
+	{{/data-logos}}
+
 	<nav>
 		{{{html-freo-menus}}}
 	</nav>
