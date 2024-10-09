@@ -1,7 +1,6 @@
 .skin-freo-menu {
 	position: relative;
 	text-align: right;
-	z-index: 90;
 	margin: 0.5em;
 	display: inline-block;
 
@@ -18,7 +17,23 @@
 		font-size: 1em;
 		line-height: 2em;
 		position: relative;
-		z-index: 110;
+	}
+
+	&.skin-freo-menu-actions {
+		margin: 0;
+
+		button {
+			border-color: #fff;
+		}
+
+		.skin-freo-image-menu {
+			background-repeat: no-repeat;
+			background-position: center right;
+
+			span {
+				visibility: hidden;
+			}
+		}
 	}
 
 	menu {
@@ -35,8 +50,14 @@
 		box-shadow: 2px 2px 3px #5858585b;
 	}
 
+	&[ data-skin-freo-menu-open ] {
+		z-index: 90;
+	}
+
 	&[ data-skin-freo-menu-open ] button {
+		z-index: 110;
 		background-color: #eeebe8;
+		border-color: #e2dcd3;
 		border-bottom-color: #eeebe8;
 	}
 

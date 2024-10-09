@@ -46,10 +46,10 @@ class SkinFreo extends SkinMustache {
 			$out['data-portlets']['data-namespaces']['array-items'],
 			$out['data-portlets']['data-views']['array-items'],
 			$out['data-portlets']['data-actions']['array-items'],
-			$out['data-portlets-sidebar']['data-portlets-first']['array-items']
+			$out['data-portlets-sidebar']['array-portlets-rest'][1]['array-items'] ?? []
 		);
 		$actions = '';
-		foreach ( $actionsAll as $idx => $item ) {
+		foreach ( $actionsAll as $item ) {
 			if ( in_array( $item['name'], [ 'talk', 'specialpages' ] )
 				|| in_array( $item['id'], [ 'ca-view', 'ca-talk', 't-upload' ] )
 				|| str_starts_with( $item['id'], 'ca-nstab-' )

@@ -18,7 +18,7 @@
 				{
 					"name": "freo",
 					"responsive": true,
-					"toc": false,
+					"toc": true,
 					"messages": [
 						"sitetitle",
 						"skin-freo-menu-actions",
@@ -54,7 +54,6 @@
 				"content-links": true,
 				"content-media": true,
 				"content-links-external": false,
-				"interface-message-box": true,
 				"interface-category": true,
 				"toc": true
 			},
@@ -78,7 +77,19 @@
 			"packageFiles": [
 				"skin.js",
 				"dropdownmenu.js"
+			],
+			"dependencies": [
+				"skins.freo.images"
 			]
+		},
+		"skins.freo.images": {
+			"class": "MediaWiki\\ResourceLoader\\ImageModule",
+			"selector": ".skin-freo-image-{name}",
+			"images": {
+				"menu": {
+					"file": "menu.svg"
+				}
+			}
 		}
 	},
 	"ResourceModuleSkinStyles": {},
