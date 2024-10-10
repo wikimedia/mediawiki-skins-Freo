@@ -11,7 +11,7 @@
 	}
 
 	button {
-		border: 1px solid #e2dcd3;
+		border: 1px solid #fff;
 		background: none;
 		cursor: pointer;
 		font-size: 1em;
@@ -47,17 +47,20 @@
 		display: flex;
 		flex-direction: column;
 		top: 2em;
-		box-shadow: 2px 2px 3px #5858585b;
 	}
 
 	&[ data-skin-freo-menu-open ] {
 		z-index: 90;
 	}
 
+	&[ data-skin-freo-menu-open ] button,
+	&[ data-skin-freo-menu-open ] menu {
+		border: 1px solid #b3a48e;
+	}
+
 	&[ data-skin-freo-menu-open ] button {
 		z-index: 110;
 		background-color: #eeebe8;
-		border-color: #e2dcd3;
 		border-bottom-color: #eeebe8;
 	}
 

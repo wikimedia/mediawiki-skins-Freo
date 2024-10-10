@@ -42,11 +42,21 @@ class SkinFreo extends SkinMustache {
 		}
 
 		// Page actions menu.
+		$portletsRest = $out['data-portlets-sidebar']['array-portlets-rest'] ?? [];
+		$toolbox = array_values( array_filter( $portletsRest, static function ( $item ) {
+			return $item['id'] === 'p-tb';
+		} ) );
+		$toolsPage = [];
+		foreach ( $toolbox[0]['array-items'] as $tool ) {
+			if ( !in_array( $tool['id'], [ 't-upload', 't-specialpages' ] ) ) {
+				$toolsPage[] = $tool;
+			}
+		}
 		$actionsAll = array_merge(
 			$out['data-portlets']['data-namespaces']['array-items'],
 			$out['data-portlets']['data-views']['array-items'],
 			$out['data-portlets']['data-actions']['array-items'],
-			$out['data-portlets-sidebar']['array-portlets-rest'][1]['array-items'] ?? []
+			$toolsPage
 		);
 		$actions = '';
 		foreach ( $actionsAll as $item ) {
@@ -66,6 +76,7 @@ class SkinFreo extends SkinMustache {
 			[ 'page' => 'Special:RecentChanges', 'label-msg' => 'recentchanges' ],
 			[ 'page' => 'Special:Upload', 'label-msg' => 'upload' ],
 			[ 'page' => $this->msg( 'randompage-url' )->text(), 'label-msg' => 'randompage' ],
+			[ 'page' => 'Special:SpecialPages', 'label-msg' => 'specialpages' ],
 		];
 		$out['html-freo-menu-site'] = $this->getMenu( $this->msg( 'skin-freo-menu-site' ), $siteMenu );
 
@@ -86,6 +97,9 @@ class SkinFreo extends SkinMustache {
 		$out['page-title-displaytitle'] = $displayTitle !== $this->getTitle()->getPrefixedText()
 			? $displayTitle
 			: false;
+
+		// Get subtitle without subpage breadcrumbs.
+		$out['html-subtitleonly'] = $this->getOutput()->getSubtitle();
 
 		$out['html-footer-blurb'] = $this->msg( 'skin-freo-footer-blurb' )->parse();
 
