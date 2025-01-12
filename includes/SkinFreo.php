@@ -47,7 +47,7 @@ class SkinFreo extends SkinMustache {
 			return $item['id'] === 'p-tb';
 		} ) );
 		$toolsPage = [];
-		foreach ( $toolbox[0]['array-items'] as $tool ) {
+		foreach ( $toolbox[0]['array-items'] ?? [] as $tool ) {
 			if ( !in_array( $tool['id'], [ 't-upload', 't-specialpages' ] ) ) {
 				$toolsPage[] = $tool;
 			}
