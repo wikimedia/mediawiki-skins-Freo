@@ -54,6 +54,7 @@
 				"content-links": true,
 				"content-media": true,
 				"content-links-external": false,
+				"interface-core": true,
 				"interface-category": true,
 				"toc": true
 			},
@@ -92,7 +93,11 @@
 			}
 		}
 	},
-	"ResourceModuleSkinStyles": {},
+	"ResourceModuleSkinStyles": {
+		"freo": {
+			"+mediawiki.special.userlogin.common.styles": "userlogin.less"
+		}
+	},
 	"AutoloadClasses": {
 		"SkinFreo": "includes/SkinFreo.php"
 	},
