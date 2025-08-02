@@ -80,6 +80,7 @@
 				"dropdownmenu.js"
 			],
 			"dependencies": [
+				"mediawiki.skinning.typeaheadSearch",
 				"skins.freo.images"
 			]
 		},

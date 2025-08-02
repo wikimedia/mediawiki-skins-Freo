@@ -18,11 +18,13 @@
 		{{{html-freo-menus}}}
 	</nav>
 	{{#data-search-box}}
-		<form action="{{form-action}}" class="skin-freo-searchform">
-			<input type="hidden" name="title" value="{{page-title}}">
-			<label for="searchInput">{{msg-search}}</label>
-			{{{html-input}}}
-		</form>
+		<div class="skin-freo-searchform-wrapper">
+			<form action="{{form-action}}" id="skin-freo-searchform" class="skin-freo-searchform-nojs">
+				<input type="hidden" name="title" value="{{page-title}}">
+				{{{html-input}}}
+				<button type="submit">{{msg-search}}</button>
+			</form>
+		</div>
 	{{/data-search-box}}
 
 	<div class="skin-freo-user-site-menus">
