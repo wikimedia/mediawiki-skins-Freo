@@ -62,8 +62,11 @@ class SkinFreo extends SkinMustache {
 		$actions = '';
 		foreach ( $actionsAll as $item ) {
 			if ( in_array( $item['name'], [ 'talk', 'specialpages' ] )
-				|| in_array( $item['id'], [ 'ca-view', 'ca-talk', 't-upload' ] )
-				|| str_starts_with( $item['id'], 'ca-nstab-' )
+				|| ( isset( $item['id'] )
+					&& ( in_array( $item['id'], [ 'ca-view', 'ca-talk', 't-upload' ] )
+						|| str_starts_with( $item['id'], 'ca-nstab-' )
+					)
+				)
 			) {
 				continue;
 			}

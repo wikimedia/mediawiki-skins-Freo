@@ -127,14 +127,36 @@ main header {
 }
 
 h1,
+.mw-heading1,
 h2,
-h3 {
+.mw-heading2,
+h3,
+.mw-heading3 {
 	line-height: 1.2;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 
+	h1,
+	h2,
+	h3,
 	.mw-headline {
 		flex: 2;
+	}
+}
+
+.mw-editsection {
+	user-select: none;
+	font-weight: normal;
+
+	a {
+		font-size: 55%;
+		margin-left: 1em;
+	}
+
+	.mw-editsection-bracket,
+	.mw-editsection-divider {
+		display: none;
 	}
 }
 
@@ -190,21 +212,6 @@ img {
 
 .toctogglespan {
 	display: none;
-}
-
-.mw-editsection {
-	user-select: none;
-	font-weight: normal;
-
-	a {
-		font-size: 55%;
-		margin-left: 1em;
-	}
-
-	.mw-editsection-bracket,
-	.mw-editsection-divider {
-		display: none;
-	}
 }
 
 .skin-freo-sitefooter {
