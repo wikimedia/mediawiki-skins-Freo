@@ -54,7 +54,6 @@ class SkinFreo extends SkinMustache {
 			}
 		}
 		$actionsAll = array_merge(
-			$out['data-portlets']['data-namespaces']['array-items'],
 			$out['data-portlets']['data-views']['array-items'],
 			$out['data-portlets']['data-actions']['array-items'],
 			$toolsPage
@@ -83,6 +82,18 @@ class SkinFreo extends SkinMustache {
 			[ 'page' => 'Special:SpecialPages', 'label-msg' => 'specialpages' ],
 		];
 		$out['html-freo-menu-site'] = $this->getMenu( $this->msg( 'skin-freo-menu-site' ), $siteMenu );
+
+		// Associated pages menu.
+		$out['html-freo-associated-pages'] = '';
+		foreach ( $out['data-portlets']['data-associated-pages']['array-items'] as $assocPage ) {
+			if ( in_array( $assocPage['id'], [ 'ca-nstab-main', 'ca-talk' ] ) ) {
+				continue;
+			}
+			$out['html-freo-associated-pages'] .= $assocPage['html-item'];
+		}
+		if ( !$out['html-freo-associated-pages'] ) {
+			unset( $out['html-freo-associated-pages'] );
+		}
 
 		// Only link the page title if we're not currently viewing the page.
 		$isView = Action::getActionName( $this->getContext() ) === 'view';

@@ -60,7 +60,7 @@ header.skin-freo-siteheader {
 			padding: 0;
 
 			.cdx-text-input__input {
-				border: 0;
+				border: 1px solid #e2dcd3;
 				box-shadow: none;
 				padding: 5px;
 				border-radius: 5px;
@@ -123,6 +123,41 @@ main header {
 
 	a {
 		color: inherit;
+	}
+
+	.skin-freo-associated-pages {
+		border-bottom: 1px solid @button-borders;
+		display: flex;
+		list-style-type: none;
+		margin: 0 0 1em 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+
+			a {
+				display: block;
+				margin: 0 0.5em;
+				border: 1px solid @button-borders;
+				border-bottom-color: @button-borders;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				padding: 0.4em 0.7em;
+				position: relative;
+				bottom: -1px;
+				hyphens: initial;
+				line-height: 1em;
+				color: #717171;
+			}
+		}
+
+		li.selected a {
+			border-color: @button-borders;
+			border-bottom-color: #fff;
+			color: inherit;
+			z-index: 5;
+		}
 	}
 }
 
