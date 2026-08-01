@@ -79,6 +79,8 @@ class SkinFreo extends SkinMustache {
 			[ 'page' => 'Special:RecentChanges', 'label-msg' => 'recentchanges' ],
 			[ 'page' => 'Special:Upload', 'label-msg' => 'upload' ],
 			[ 'page' => $this->msg( 'randompage-url' )->text(), 'label-msg' => 'randompage' ],
+			[ 'page' => 'Special:Statistics', 'label-msg' => 'statistics' ],
+			[ 'page' => 'Special:MediaStatistics', 'label-msg' => 'mediastatistics' ],
 			[ 'page' => 'Special:SpecialPages', 'label-msg' => 'specialpages' ],
 		];
 		$out['html-freo-menu-site'] = $this->getMenu( $this->msg( 'skin-freo-menu-site' ), $siteMenu );
