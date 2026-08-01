@@ -83,7 +83,11 @@ class SkinFreo extends SkinMustache {
 			[ 'page' => 'Special:MediaStatistics', 'label-msg' => 'mediastatistics' ],
 			[ 'page' => 'Special:SpecialPages', 'label-msg' => 'specialpages' ],
 		];
-		$out['html-freo-menu-site'] = $this->getMenu( $this->msg( 'skin-freo-menu-site' ), $siteMenu );
+		$out['html-freo-menu-site'] = $this->getMenu(
+			$this->msg( 'skin-freo-menu-site' ),
+			$siteMenu,
+			'skin-freo-menu-end'
+		);
 
 		// Associated pages menu.
 		$out['html-freo-associated-pages'] = '';
@@ -123,14 +127,14 @@ class SkinFreo extends SkinMustache {
 		return $out;
 	}
 
-	private function getMenu( string $label, array $items ): string {
+	private function getMenu( string $label, array $items, string $extraClasses = '' ): string {
 		$menuItems = '';
 		foreach ( $items as $item ) {
 			$menuItems .= $this->getMenuItem( $item );
 		}
 		$label = Html::element( 'button', [ 'type' => 'button' ], $label );
 		$menu = Html::rawElement( 'menu', [], $menuItems );
-		return Html::rawElement( 'div', [ 'class' => 'skin-freo-menu' ], $label . $menu );
+		return Html::rawElement( 'div', [ 'class' => 'skin-freo-menu ' . $extraClasses ], $label . $menu );
 	}
 
 	/**
